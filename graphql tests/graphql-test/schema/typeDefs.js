@@ -9,10 +9,13 @@ const typeDefs = gql`
 
 	type Query {
 		getUsers: [User]
+		getUser(name: String!): User 
 	}
 	type Mutation {
-		createUser(name: String!, facebook: String!,instagram:String): User
+		createUser(name: String!, facebook: String!,instagram:String): User,
+		editUser(name: String!, facebook: String, instagram: String): User
 	}
+    
 `;
 
 module.exports = { typeDefs }
